@@ -57,7 +57,7 @@ Parameters:
 
   InferenceProfileId:
     Type: String
-    Default: us.anthropic.claude-sonnet-4-5-20250929-v1:0
+    Default: us.anthropic.claude-sonnet-4-6
     Description: Bedrock inference profile ID
 
   GrafanaEndpoint:
@@ -414,7 +414,7 @@ Resources:
                 - Name: context
                 - Name: contextEKS
                 - Name: user_message
-          ModelId: us.anthropic.claude-sonnet-4-5-20250929-v1:0
+          ModelId: us.anthropic.claude-sonnet-4-6
 
   UpdateDashboardPrompt:
     Type: AWS::Bedrock::Prompt
@@ -449,7 +449,7 @@ Resources:
                 - Name: user_message
                 - Name: context
                 - Name: contextEKS
-          ModelId: us.anthropic.claude-sonnet-4-5-20250929-v1:0
+          ModelId: us.anthropic.claude-sonnet-4-6
 
   DeleteDashboardPrompt:
     Type: AWS::Bedrock::Prompt
@@ -489,7 +489,7 @@ Resources:
                 Reply with JSON only, without further explanation.
               InputVariables:
                 - Name: user_message
-          ModelId: us.anthropic.claude-sonnet-4-5-20250929-v1:0
+          ModelId: us.anthropic.claude-sonnet-4-6
 
   LambdaCreateDashboardRole:
     DependsOn: CreateDashboardPrompt
@@ -519,10 +519,10 @@ Resources:
             Action:
               - bedrock:InvokeModel
             Resource:
-              - !Sub 'arn:aws:bedrock:${AWS::Region}:${AWS::AccountId}:inference-profile/us.anthropic.claude-sonnet-4-5-20250929-v1:0'
-              - !Sub 'arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-sonnet-4-5-20250929-v1:0'
-              - !Sub 'arn:aws:bedrock:us-east-2::foundation-model/anthropic.claude-sonnet-4-5-20250929-v1:0'
-              - !Sub 'arn:aws:bedrock:${AWS::Region}::foundation-model/anthropic.claude-sonnet-4-5-20250929-v1:0'
+              - !Sub 'arn:aws:bedrock:${AWS::Region}:${AWS::AccountId}:inference-profile/us.anthropic.claude-sonnet-4-6'
+              - !Sub 'arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-sonnet-4-6'
+              - !Sub 'arn:aws:bedrock:us-east-2::foundation-model/anthropic.claude-sonnet-4-6'
+              - !Sub 'arn:aws:bedrock:${AWS::Region}::foundation-model/anthropic.claude-sonnet-4-6'
           - Sid: BedrockPromptManagement
             Effect: Allow
             Action:
@@ -590,10 +590,10 @@ Resources:
             Action:
               - bedrock:InvokeModel
             Resource:
-              - !Sub 'arn:aws:bedrock:${AWS::Region}:${AWS::AccountId}:inference-profile/us.anthropic.claude-sonnet-4-5-20250929-v1:0'
-              - !Sub 'arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-sonnet-4-5-20250929-v1:0'
-              - !Sub 'arn:aws:bedrock:us-east-2::foundation-model/anthropic.claude-sonnet-4-5-20250929-v1:0'
-              - !Sub 'arn:aws:bedrock:${AWS::Region}::foundation-model/anthropic.claude-sonnet-4-5-20250929-v1:0'
+              - !Sub 'arn:aws:bedrock:${AWS::Region}:${AWS::AccountId}:inference-profile/us.anthropic.claude-sonnet-4-6'
+              - !Sub 'arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-sonnet-4-6'
+              - !Sub 'arn:aws:bedrock:us-east-2::foundation-model/anthropic.claude-sonnet-4-6'
+              - !Sub 'arn:aws:bedrock:${AWS::Region}::foundation-model/anthropic.claude-sonnet-4-6'
           - Sid: BedrockPromptManagement
             Effect: Allow
             Action:
@@ -661,10 +661,10 @@ Resources:
             Action:
               - bedrock:InvokeModel
             Resource:
-              - !Sub 'arn:aws:bedrock:${AWS::Region}:${AWS::AccountId}:inference-profile/us.anthropic.claude-sonnet-4-5-20250929-v1:0'
-              - !Sub 'arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-sonnet-4-5-20250929-v1:0'
-              - !Sub 'arn:aws:bedrock:us-east-2::foundation-model/anthropic.claude-sonnet-4-5-20250929-v1:0'
-              - !Sub 'arn:aws:bedrock:${AWS::Region}::foundation-model/anthropic.claude-sonnet-4-5-20250929-v1:0'
+              - !Sub 'arn:aws:bedrock:${AWS::Region}:${AWS::AccountId}:inference-profile/us.anthropic.claude-sonnet-4-6'
+              - !Sub 'arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-sonnet-4-6'
+              - !Sub 'arn:aws:bedrock:us-east-2::foundation-model/anthropic.claude-sonnet-4-6'
+              - !Sub 'arn:aws:bedrock:${AWS::Region}::foundation-model/anthropic.claude-sonnet-4-6'
           - Sid: BedrockPromptManagement
             Effect: Allow
             Action:
