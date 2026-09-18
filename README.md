@@ -46,7 +46,7 @@ Before deploying this solution, ensure you have the following configured:
   - `lambda-create-dashboard`
   - `lambda-update-dashboard`
   - `lambda-delete-dashboard`
-- **Amazon Bedrock Model** - Claude Sonnet 4.5 (`anthropic.claude-sonnet-4-5-20250929-v1:0`) enabled in your AWS account
+- **Amazon Bedrock Model** - Claude Sonnet 4.6 (`anthropic.claude-sonnet-4-5-20250929-v1:0`) enabled in your AWS account
 - **Knowledge Base for Container Insights** - Amazon Bedrock Knowledge Base created and populated with Container Insights documentation ([Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create.html))
 - **CloudWatch Metrics** - EKS cluster with metrics being collected in CloudWatch (Container Insights enabled)
 - **Metric-file.csv** that contains some your custom metrics collected by CloudWatch
@@ -210,7 +210,7 @@ aws cloudformation describe-stacks \
 All incoming requests are verified using the Slack Signing Secret (HMAC-SHA256). This ensures only requests from your authorized Slack workspace are processed. The signing secret is stored securely in AWS Secrets Manager and encrypted with KMS. Requests with invalid signatures or timestamps older than 5 minutes are rejected.
 
 **AI Model Behavior:**  
-This solution uses Generative AI (Claude Sonnet 4.5) which is non-deterministic by nature. Results may vary between requests even with identical inputs. If the generated dashboards don't meet your specific requirements, you may need to adjust the prompts in the CloudFormation template (`UpdateDashboardPrompt`, `CreateDashboardPrompt`, `DeleteDashboardPrompt`) to better suit your use case.
+This solution uses Generative AI (Claude Sonnet 4.6) which is non-deterministic by nature. Results may vary between requests even with identical inputs. If the generated dashboards don't meet your specific requirements, you may need to adjust the prompts in the CloudFormation template (`UpdateDashboardPrompt`, `CreateDashboardPrompt`, `DeleteDashboardPrompt`) to better suit your use case.
 
 The prompts can be modified directly in the `dashboard-management-infrastructure.yaml` file before deployment or updated after deployment through the cloudformation.
 
